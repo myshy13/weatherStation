@@ -7,3 +7,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 		<App />
 	</React.StrictMode>
 );
+window.onload = console.clear();
+console.log("connected");
