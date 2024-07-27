@@ -1,103 +1,114 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-:root {
-    font-family: "Titillium Web", sans-serif;
-    margin: 0px;
-    color: #000000;
-    background: linear-gradient(rgb(0, 125, 179), rgb(0, 153, 255));
-    height: 100vh;
+.Home {
+	font-family: "Titillium Web", sans-serif;
+	margin: 0px !important;
+	border: none !important;
+	padding: 0.5em;
+	color: #000000;
+	background: linear-gradient(rgb(0, 125, 179), rgb(0, 153, 255));
+	height: 100vh;
+}
+
+:root,
+body {
+	margin: 0px;
+}
+
+.body {
+	margin: 0px;
 }
 
 .tab {
-    background-color: #004299;
-    width: 100%;
-    border-radius: 0.5em;
-    display: flex;
+	background-color: #004299;
+	width: 100%;
+	border-radius: 0.5em;
+	display: flex;
 }
 
 .tabContent {
-    display: flex;
-    background-color: #004299;
-    margin: 0.2em;
-    width: 5em;
-    height: 3em;
-    margin: 0.2em;
-    color: black;
-    text-decoration: none;
-    border-radius: 0.5em;
-    animation-duration: 0.5s;
-    animation-name: unhover;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: lighter;
-    margin: auto;
-    outline: none;
+	display: flex;
+	background-color: #004299;
+	margin: 0.2em;
+	width: 5em;
+	height: 3em;
+	margin: 0.2em;
+	color: black;
+	text-decoration: none;
+	border-radius: 0.5em;
+	animation-duration: 0.5s;
+	animation-name: unhover;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-weight: lighter;
+	margin: auto;
+	outline: none;
 }
 
 .about {
-    font-size: large;
+	font-size: large;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+	text-decoration: none;
+	color: black;
 }
 
 .tabContent:hover {
-    animation-fill-mode: forwards;
-    animation-name: hover;
-    animation-iteration-count: 1;
-    cursor: pointer;
+	animation-fill-mode: forwards;
+	animation-name: hover;
+	animation-iteration-count: 1;
+	cursor: pointer;
 }
 
 @keyframes hover {
-    0% {
-        background-color: #004299;
-    }
+	0% {
+		background-color: #004299;
+	}
 
-    100% {
-        background-color: #005ad0;
-    }
+	100% {
+		background-color: #005ad0;
+	}
 }
 
 @keyframes unhover {
-    100% {
-        background-color: #004299;
-    }
+	100% {
+		background-color: #004299;
+	}
 
-    0% {
-        background-color: #005ad0;
-    }
+	0% {
+		background-color: #005ad0;
+	}
 }
 
 .muiBox-root {
-    border: 5px solid black !important;
+	border: 5px solid black !important;
 }
 
 .css-0 {
-    border: 3px solid black !important;
-    border-radius: 1em;
-    padding: 0.7rem;
-    max-width: 20%;
-    background: linear-gradient(to right, rgb(0, 77, 128), lightblue);
+	border: 3px solid black !important;
+	border-radius: 1em;
+	padding: 0.7rem;
+	max-width: 20%;
+	background: linear-gradient(to right, rgb(0, 77, 128), lightblue);
 }
 
 ul {
-    list-style-type: none;
+	list-style-type: none;
 }
 
 .glow {
-    background-color: white;
-    height: 1px;
-    width: 1px;
+	background-color: white;
+	height: 1px;
+	width: 1px;
 }
 
 h2 {
-    margin-left: 1em;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: large;
-    width: 50vw;
+	margin-left: 1em;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: large;
+	width: 50vw;
 }
