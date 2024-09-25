@@ -10,35 +10,54 @@ function Mirror() {
 	const [windDirText, setWindDirText] = useState("loading...");
 	const [rain, setRain] = useState("loading...");
 	const [windSpeedLabel, setWindSpeedLabel] = useState("km/h");
+	const [time, setTime] = useState();
+	const [second, setSecond] = useState();
 
 	useEffect(() => {
-		getData((te, ra, dir, speed) => {
-			speed = 0;
-			setTemp(te);
-			setRain(ra);
-			setWindDir(dir);
-			if (speed != 0) {
-				setWindSpeed(speed);
-				setWindDirText(direction(windDir));
-			} else if (speed == 0) {
-				setWindSpeed(speed);
-			}
+		var Date_ = new Date();
 
-			if (speed == 0) {
-				setWindSpeed("Calm");
-				setWindSpeedLabel("");
-				setWindDirText("Not available");
-			}
+		function reset() {
+			setTime(`${Date_.getHours()}:${Date_.getMinutes()}`);
+			getData((te, ra, dir, speed) => {
+				setTemp(te);
+				setRain(ra);
+				setWindDir(dir);
+				if (!speed <= 0) {
+					setWindSpeed(speed);
+					setWindDirText(direction(windDir));
+				} else if (speed <= 1) {
+					setWindSpeed(speed);
+				}
 
-			console.log(windDir);
-			console.log(windDirText);
-		});
-	});
+				if (speed <= 1) {
+					setWindSpeed("Calm");
+					setWindSpeedLabel("");
+					setWindDirText("Not available");
+					console.log(`speed: ${speed} km/h`);
+				}
+
+				console.log(windDir);
+				console.log(windDirText);
+			});
+		}
+		reset();
+		setInterval(() => {
+			reset();
+		}, 60000);
+		setInterval(() => {
+			Date_ = new Date();
+			setSecond(Date_.getSeconds());
+		}, 1000);
+	}, [windDir, windDirText]);
 
 	return (
 		<>
 			<div className="mirror">
 				<div className="info">
+					<div className="time">
+						<span className="title">{time}</span>
+						<span className="label">{second}</span>
+					</div>
 					<div className="temp-rain">
 						<p className="temp title">
 							{temp}&deg;<span className="label">C</span>
