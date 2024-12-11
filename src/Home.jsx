@@ -1,9 +1,8 @@
 import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
-import getData from "../functions/getData.js";
+import getData from "./functions/getData.js";
 import { Mirror } from "./Mirror.jsx";
-import Header from "../components/Header.jsx";
-import { direction } from "../functions/map.js";
+import { direction } from "./functions/map.js";
 
 function Home() {
 	const [temp, setTemp] = useState("loading...");
@@ -39,11 +38,10 @@ function Home() {
 		return (
 			<>
 				<div className="Home">
-					<Header />
 
 					<h1>Conder, ACT weather</h1>
 					<h3>Temp:</h3>
-					<Box>{temp}&deg;</Box>
+					<Box>{temp}&deg;C</Box>
 
 					<h3>Rain since midnight:</h3>
 					<Box>{rain}mm</Box>

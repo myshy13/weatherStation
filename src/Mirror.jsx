@@ -1,7 +1,7 @@
-import getData from "../functions/getData.js";
+import getData from "./functions/getData.js";
 import { useEffect, useState } from "react";
 import "./mirror.css";
-import { direction } from "../functions/map.js";
+import { direction } from "./functions/map.js";
 
 function Mirror() {
 	const [temp, setTemp] = useState("loading...");
