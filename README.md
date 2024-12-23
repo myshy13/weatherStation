@@ -1,3 +1,11 @@
-# important:
+# weather station
 
-1. this app must be running with a server using node on port 3000 [here](https://github.com/myshy13/weatherStation-backend)
+this is a weather station frontend that connects to 
+our ICANBE1067 Wunderground server 
+
+# how to use
+
+in the terminal, run the command
+'''npm run dev'''
+to install dependencies, run
+'''npm install'''
