@@ -1,3 +1,15 @@
-# important:
+# weather station
 
-1. this app must be running with a server using node on port 3000 [here](https://github.com/myshy13/weatherStation-backend)
+this is a weather station web app that uses 
+me and @gm82au's wunderground server that 
+connects to our personal weather station!
+this is the custom web app to display 
+that information
+
+# how to use
+
+run the terminal command:
+'''npm run dev'''
+
+and install dependencies, run
+'''npm install'''
