@@ -2,9 +2,6 @@
 	"folders": [
 		{
 			"path": ".."
-		},
-		{
-			"path": "../../../Backend/weatherStation-backend"
 		}
 	],
 	"settings": {

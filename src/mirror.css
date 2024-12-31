@@ -14,6 +14,8 @@ html,
 	padding: 0px !important;
 	border: none;
 	overflow: hidden;
+
+	cursor: none;
 }
 
 .info {
