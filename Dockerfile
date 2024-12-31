@@ -1,5 +1,5 @@
 # Use an official Node.js 18 image as the base
-FROM node:18-alpine
+FROM node
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -7,8 +7,7 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY package*.json ./
 
-# Install dependencies
-RUN sudo apt install npm
+# install dependencies
 RUN npm install
 
 # Copy the application code into the container
@@ -18,4 +17,4 @@ COPY . .
 EXPOSE 5173
 
 # Run the command to start the application
-CMD [ "node", "server.js" ]
+CMD [ "npm", "run", "dev", "--", "--host" ]
