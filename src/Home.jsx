@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+ 
 import { useEffect, useState } from "react";
 import getData from "./functions/getData.js";
 import { Mirror } from "./Mirror.jsx";
@@ -26,7 +26,7 @@ function Home() {
 
 			if (speed <= 1) {
 				setWindSpeedLabel("");
-				setWindDirText("Not available");
+				setWindDirText("None");
 				console.log(`speed: ${speed} km/h`);
 			}
 
@@ -34,30 +34,28 @@ function Home() {
 			console.log(windDirText);
 		});
 	});
-	if (new URLSearchParams(document.location.search).get("mode") != "mirror") {
-		return (
-			<>
-				<div className="Home">
 
-					<h1>Conder, ACT weather</h1>
-					<h3>Temp:</h3>
-					<Box>{temp}&deg;C</Box>
 
-					<h3>Rain since midnight:</h3>
-					<Box>{rain}mm</Box>
-					<h3>Wind speed:</h3>
-					<Box>
-						{windSpeed}
-						{windSpeedLabel}
-					</Box>
-					<h3>Wind direction:</h3>
-					<Box>{windDirText}</Box>
+	return new URLSearchParams(document.location.search).get("mode") != "mirror" ? (
+		<>
+			<div className="Home">
+
+				<h1>Conder, ACT weather</h1>
+				<h3>Temp:</h3>
+				<div className="css-0">{temp}&deg;C</div>
+
+				<h3>Rain since midnight:</h3>
+				<div className="css-0">{rain}mm</div>
+				<h3>Wind speed:</h3>
+				<div className="css-0">
+					{windSpeed}
+					{windSpeedLabel}
 				</div>
-			</>
-		);
-	} else {
-		return <Mirror />;
-	}
+				<h3>Wind direction:</h3>
+				<div className="css-0">{windDirText}</div>
+			</div>
+		</>
+	) : <Mirror />;
 }
 
 export default Home;

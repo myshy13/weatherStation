@@ -8,8 +8,7 @@ that information
 
 # how to use
 
-run the terminal command:
-'''npm run dev'''
-
-and install dependencies, run
-'''npm install'''
+in the terminal, run the command
+```npm run dev```
+to install dependencies, run
+```npm install```
