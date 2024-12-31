@@ -6,6 +6,6 @@ our ICANBE1067 Wunderground server
 # how to use
 
 in the terminal, run the command
-'''npm run dev'''
+```npm run dev```
 to install dependencies, run
-'''npm install'''
+```npm install```
