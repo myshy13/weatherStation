@@ -24,9 +24,10 @@ function Home() {
 				setWindSpeed(speed);
 			}
 
-			if (speed <= 1) {
-				setWindSpeedLabel("");
-				setWindDirText("None");
+			if (speed < 1) {
+				setWindSpeed("Calm")
+				setWindSpeedLabel("km/h");
+				setWindDirText("Calm");
 				console.log(`speed: ${speed} km/h`);
 			}
 

@@ -58,7 +58,7 @@ function Mirror() {
         return strTime;
       }
       setTime(formatAMPM(new Date()));
-    }, 1000);
+    }, 1001);
   }, [second, windDir, windDirText]);
 
   return (
