@@ -14,26 +14,21 @@ function Mirror() {
   const [second, setSecond] = useState();
 
   useEffect(() => {
-    var Date_ = new Date();
+    var date = new Date();
 
     function reset() {
-      setTime(`${Date_.getHours()}:${Date_.getMinutes()}`);
       getData((te, ra, dir, speed) => {
         setTemp(te);
         setRain(ra);
         setWindDir(dir);
-        if (!speed <= 0) {
-          setWindSpeed(speed);
-          setWindDirText(direction(windDir));
-        } else if (speed <= 1) {
-          setWindSpeed(speed);
-        }
-
-        if (speed <= 1) {
+        if (speed == 0) {
           setWindSpeed("Calm");
+          setWindDirText("none");
           setWindSpeedLabel("");
-          setWindDirText("Not available");
-          console.log(`speed: ${speed} km/h`);
+        } else if (speed > 0) {
+          setWindSpeed(speed);
+          setWindSpeedLabel("km/h");
+          setWindDir(direction(dir));
         }
 
         console.log(windDir);
@@ -45,20 +40,20 @@ function Mirror() {
       reset();
     }, 60000);
     setInterval(() => {
-      Date_ = new Date();
-      setSecond(Date_.getSeconds());
+      date = new Date();
+      setSecond(date.getSeconds());
       function formatAMPM(date) {
         var hours = date.getHours();
         var minutes = date.getMinutes();
         var ampm = hours >= 12 ? "pm" : "am";
         hours = hours % 12;
         hours = hours ? hours : 12; // the hour '0' should be '12'
-        minutes = minutes < 10 ? "0" + minutes : minutes;
+        minutes = minutes < 10 ? `0${minutes}` : minutes;
         var strTime = hours + ":" + minutes + " " + ampm;
         return strTime;
       }
       setTime(formatAMPM(new Date()));
-    }, 1001);
+    }, 99);
   }, [second, windDir, windDirText]);
 
   return (
