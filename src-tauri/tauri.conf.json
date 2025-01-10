@@ -1,7 +1,7 @@
 {
   "build": {
     "distDir": "../dist",
-    "devPath": "http://localhost:4000",
+    "devPath": "http://localhost:5173/",
     "beforeDevCommand": "",
     "beforeBuildCommand": ""
   },
@@ -42,7 +42,7 @@
       "all": true
     },
     "window": {
-      "title": "Tauri App",
+      "title": "Conder Weather",
       "width": 800,
       "height": 600,
       "resizable": true,
